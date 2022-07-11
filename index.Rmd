@@ -1,0 +1,39 @@
+---
+title: "Where you Are from?"
+output: 
+  flexdashboard::flex_dashboard:
+    self_contained: False
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(flexdashboard)
+library(leaflet)
+library(tidygeocoder)
+
+loc <- read.csv("location.csv", sep = "|")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### 
+
+```{r}
+loc %>%
+  geocode(city_country, method = 'osm', lat = latitude , long = longitude) %>% 
+  leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+  setView(85.32058, 27.70832, zoom = 3) %>%
+  addMarkers(lng=~longitude, lat=~latitude, popup=paste0(loc$name, "<br>", loc$city_country))
+```
+
+
+Column {data-width=250}
+-----------------------------------------------------------------------
+
+### Table
+    
+```{r}
+knitr::kable(loc[1:2])
+``` 
