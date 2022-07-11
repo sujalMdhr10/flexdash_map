@@ -20,7 +20,7 @@ jobs:
       - name: Install packages
         run: |
           Rscript -e 'options(Ncpus = 2, repos="https://packagemanager.rstudio.com/cran/__linux__/focal/2022-06-17"); 
-          pkgs <- c("flexdashboard", "leaflet", "tidygeocoder"); 
+          pkgs <- c("rmarkdown", "flexdashboard", "leaflet", "tidygeocoder"); 
           if(length(new.pkgs <- setdiff(pkgs, rownames(installed.packages())))) install.packages(new.pkgs, dependencies = T)'
       - name: Render Rmarkdown
         run: |
