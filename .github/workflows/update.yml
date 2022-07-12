@@ -4,6 +4,7 @@ on:
   push:
     branches:
      - main
+    paths: ['**.Rmd']
 
 jobs:
   build:
@@ -23,6 +24,7 @@ jobs:
     
       - name: Render Rmarkdown
         run: |
+          RMD_PATH=($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
           Rscript -e "rmarkdown::render('index.Rmd')"
       - name: commit
         env:
