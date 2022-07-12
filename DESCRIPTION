@@ -1,10 +1,8 @@
-Title: Git Map
+Title: Flexdash Map
 Description: A simple application to pin your location using Git
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Imports: 
     flexdashboard,
     tidygeocode,
-    magrittr, 
     leaflet
