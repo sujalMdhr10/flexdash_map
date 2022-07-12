@@ -1,8 +1,10 @@
+Package: flexdashmap
 Title: Flexdash Map
 Description: A simple application to pin your location using Git
+Version: 0.0.1
 License: GPL-3
 Encoding: UTF-8
-Imports: 
+Imports:
   flexdashboard,
   tidygeocode,
   leaflet

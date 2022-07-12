@@ -25,7 +25,7 @@ jobs:
       - name: Render Rmarkdown
         run: |
           RMD_PATH=($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
-          Rscript -e "rmarkdown::render('index.Rmd')"
+          Rscript -e "rmarkdown::render('index.Rmd')" ${RMD_PATH[*]}
       - name: commit
         env:
          GITHUB_TOKEN: ${{secrets.GH_TOKEN}} 
