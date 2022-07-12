@@ -3,6 +3,6 @@ Description: A simple application to pin your location using Git
 License: GPL-3
 Encoding: UTF-8
 Imports: 
-    flexdashboard,
-    tidygeocode,
-    leaflet
+  flexdashboard,
+  tidygeocode,
+  leaflet
