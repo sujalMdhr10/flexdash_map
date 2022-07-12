@@ -6,5 +6,5 @@ License: GPL-3
 Encoding: UTF-8
 Imports:
   flexdashboard,
-  tidygeocode,
+  tidygeocoder,
   leaflet
