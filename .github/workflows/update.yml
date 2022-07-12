@@ -32,7 +32,7 @@ jobs:
     
       - name: Render Rmarkdown
         run: |
-          Rscript -e "rmarkdown::render('index.Rmd', output_dir = "_site")"
+          Rscript -e "rmarkdown::render('index.Rmd', output_dir = '_site')"
       - name: commit
         env:
          GITHUB_TOKEN: ${{secrets.GH_TOKEN}} 
