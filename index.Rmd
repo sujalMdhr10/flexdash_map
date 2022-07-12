@@ -25,7 +25,8 @@ loc %>%
   leaflet() %>%
   addProviderTiles(providers$CartoDB.Positron) %>% 
   setView(85.32058, 27.70832, zoom = 3) %>%
-  addMarkers(lng=~longitude, lat=~latitude, popup=paste0(loc$name, "<br>", loc$city_country))
+  addMarkers(lng=~longitude, lat=~latitude, 
+             popup=paste0(loc$name, "<br>", loc$city_country))
 ```
 
 
