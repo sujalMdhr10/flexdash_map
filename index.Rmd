@@ -11,8 +11,18 @@ library(flexdashboard)
 library(leaflet)
 library(tidygeocoder)
 
-loc <- read.csv("location.csv", sep = "|")
+loc <- read.csv("data/location.csv", sep = "|")
 ```
+
+<style type="text/css"> p {font-size: 20px;} 
+
+
+</style>
+
+
+Home {data-icon="fa-home"}
+===================================== 
+
 
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -20,14 +30,17 @@ Column {data-width=650}
 ### 
 
 ```{r}
-loc %>%
-  geocode(city_country, method = 'osm', lat = latitude , long = longitude) %>% 
-  leaflet() %>%
-  addProviderTiles(providers$CartoDB.Positron) %>% 
-  setView(85.32058, 27.70832, zoom = 3) %>%
-  addMarkers(lng=~longitude, 
-             lat=~latitude, 
-             popup=paste0(loc$name, "<br>", loc$city_country))
+loc |>
+  geocode(home_city_country, method = "osm", lat = latitude, long = longitude) |>
+  leaflet() |>
+  addProviderTiles(providers$CartoDB.Positron) |>
+  setView(85.32058, 28.37890, zoom = 7) |>
+  addMarkers(
+    lng = ~longitude,
+    lat = ~latitude,
+    popup = paste0(loc$name, "<br>", loc$home_city_country),
+    clusterOptions = markerClusterOptions()
+  )
 ```
 
 
@@ -35,7 +48,99 @@ Column {data-width=250}
 -----------------------------------------------------------------------
 
 ### 
-    
+
 ```{r}
-knitr::kable(loc[1:2])
+knitr::kable(loc) |>
+  kableExtra::kable_styling("striped", full_width = T) |>
+  kableExtra::scroll_box(height = "500px")
 ``` 
+
+Instruction {data-icon=""}
+===================================== 
+
+Let's help you submit your first `Pull Request`.
+
+Once your pull request is being merged, your profile will be visible in the Submissions section of this page. For this exercise you'll be adding a new entry to the source code of this website with your profile details. Excited? Let's begin!
+
+Row {.tabset .tabset-fade}
+-------------------------------------
+
+### Step 1
+
+- Go to this [GitHub repository](https://github.com/bjungbogati/flexdash_map) and fork the project to your account. 
+
+- Click on the fork button on the top right corner of the repository page to do it. 
+
+- Once done, GitHub will take you to the forked copy in your account.
+Eg: `https://github.com/YOUR-USERNAME/flexdash_map`
+
+
+### Step 2
+
+- Clone the forked repository to your local machine. Click on the big green button saying "Clone or download" and copy the https url of your repository. 
+
+- Fire up the terminal (on linux systems ctrl+alt+t. on Windows open the Git-bash ) navigate to your desired directory and type the following command. 
+
+- Replace the link with the clone URL of your repository and hit Enter.
+git clone https://github.com/YOUR_USERNAME/tryGit.git
+
+
+### Step 3
+
+- Let's start working on the changes required now! First **cd** into the cloned folder by typing the following command. 
+
+- `cd flexdash_map`
+
+- Now, Before jumping in to the code, make sure you're working on a different branch and not in master. 
+
+- To create a new branch, from the terminal inside your current project directory type the following command.
+
+- `git branch YOUR_BRANCH_NAME`
+
+- Replace the YOUR_USERNAME with your GitHub username or you can give any name to your branch which describes the purpose of the branch. Since here we're adding your profile, we'll simply give the name of the branch as above. eg: git branch binod-location. 
+
+- Once you have created the new branch we'll change the current branch from main to your newly created branch. Execute the following command on your terminal.
+
+- `git checkout YOUR_BRANCH_NAME`
+
+
+
+### Step 4
+
+- In your file manager/terminal navigate to the downloaded repo. 
+
+- Open the sub-directory ***data/location.csv** and add your respective name and location
+
+  name | home_city_country <br>
+  Your Name | Bhaktapur, Nepal
+  
+- Note: Please, separate name and location by pipe **|**.
+
+### Step 5
+
+
+- Commit the changes with a suitable commit message. First we need to stage all the changes we made. Open the terminal inside the project directory and execute following commands.
+
+- `git add .`
+
+- The above command stages all the changes, now lets commit it with a suitable message.
+
+- `git commit -m "YOUR_COMMIT_MESSAGE"`
+
+
+### Step 6
+
+- Let's push the changes to your repository! execute the following command to push all the changes to the forked copy in your GitHub account.
+
+- `git push -u origin YOUR_BRANCH_NAME`
+
+
+### Step 7
+
+- Now, open your web browser and goto the original repository on GitHub. If your changes has been pushed to your forked copy, You'll be able to see an option saying "New Pull Request" in the original repository. 
+
+- Click on the option, one next page choose the master branch of the main repo against your created-branch name ( choose your branch name we created and not master). the click on create pull request. 
+
+- Once you fill in the commit message and comment click on submit pull request. and you are all done!  Wait for a reviewer to review your file and merge it to the master. 
+
+- Once its been successfully merged, your name and location map will be visible in the home tab. 

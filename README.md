@@ -5,22 +5,12 @@ Flexdashboard which auto-updates the map when your add your location (lon, lat).
 ![](https://image.prntscr.com/image/WbKQvY4cS5CWB8LZeJkeJA.png)
 
 
-## Uses
-
-We have used the [GitHub Action](https://github.com/features/actions) which automates our workflow.
-
-Things to know:
-- Trigger event on push (you can also schedule every day).
-- Free for public / private repository
-- CI/CD for Package development (Continuous: Integration / Delivery)
-
 ### Want to try?
 
-1. Edit the [loc.csv](https://github.com/bjungbogati/flexdash_map/blob/master/loc.csv) file with your name, address, longitude, latitude 
+1. Edit the [data/location.csv](https://github.com/bjungbogati/flexdash_map/blob/main/data/location.csv) file with your name, home_city_country
 2. Commit with new branch 
 3. Send the pull request
 
-Note: Try google map for longitude, latitude.
 
 ## Is it any faster ?
 

@@ -7,4 +7,5 @@ Encoding: UTF-8
 Imports:
   flexdashboard,
   tidygeocoder,
-  leaflet
+  leaflet, 
+  kableExtra

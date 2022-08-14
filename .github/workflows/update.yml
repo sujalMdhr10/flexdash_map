@@ -27,7 +27,7 @@ jobs:
       - name: Install package dependencies
         run: |
           Rscript -e 'options(Ncpus = 2, repos="https://packagemanager.rstudio.com/cran/__linux__/focal/2022-06-17"); 
-          pkgs <- c("flexdashboard", "leaflet", "tidygeocoder"); 
+          pkgs <- c("flexdashboard", "leaflet", "tidygeocoder", "kableExtra"); 
           if(length(new.pkgs <- setdiff(pkgs, rownames(installed.packages())))) install.packages(new.pkgs, dependencies = T)'
     
       - name: Render Rmarkdown
@@ -39,5 +39,5 @@ jobs:
         run: |
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git config user.name "{{ github.actor }}"
-          git commit -am 'Re-run scrape_nepse_data.R' || echo "No changes to commit"
+          git commit -am 'Re-run index.Rmd' || echo "No changes to commit"
           git push -u origin HEAD:${{ github.ref }} || echo "Error in Push"
