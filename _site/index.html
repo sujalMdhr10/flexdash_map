@@ -48,6 +48,15 @@ window.FlexDashboardComponents = [];
 <script src="index_files/leaflet-binding-2.1.1/leaflet.js"></script>
 <script src="index_files/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
 <script src="index_files/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<link href="index_files/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="index_files/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="index_files/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="index_files/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="index_files/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+<script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+<link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="index_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="index_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <style type="text/css">
 
 /*
@@ -2632,6 +2641,12 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
+<style type="text/css"> p {font-size: 20px;} 
+
+
+</style>
+<div id="home" class="section level1" data-icon="fa-home">
+<h1>Home</h1>
 <div id="column" class="section level2" data-width="650">
 <h2>Column</h2>
 <div id="section" class="section level3">
@@ -2639,8 +2654,8 @@ window.FlexDashboardComponents.push({
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-2e4cb2b8bec261b4d671" style="width:576px;height:460.8px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2e4cb2b8bec261b4d671">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[27.708317,85.3205817,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Binod Jung Bogati <br> Kathmandu, Nepal",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[27.70832,85.32058],3,[]],"limits":{"lat":[27.708317,27.708317],"lng":[85.3205817,85.3205817]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a411f3d0504e24832473" style="width:576px;height:460.8px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a411f3d0504e24832473">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[27.708317,27.6718111],[85.3205817,85.4264284],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Binod Jung Bogati <br> Kathmandu, Nepal","Your Name <br> Bhaktapur, Nepal"],null,{"showCoverageOnHover":true,"zoomToBoundsOnClick":true,"spiderfyOnMaxZoom":true,"removeOutsideVisibleBounds":true,"spiderLegPolylineOptions":{"weight":1.5,"color":"#222","opacity":0.5},"freezeAtZoom":false},null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[28.3789,85.32058],7,[]],"limits":{"lat":[27.6718111,27.708317],"lng":[85.3205817,85.4264284]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="column-1" class="section level2" data-width="250">
@@ -2650,20 +2665,110 @@ window.FlexDashboardComponents.push({
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<table>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; ">
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">name</th>
-<th align="left">city_country</th>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+home_city_country
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Binod Jung Bogati</td>
-<td align="left">Kathmandu, Nepal</td>
+<tr>
+<td style="text-align:left;">
+Binod Jung Bogati
+</td>
+<td style="text-align:left;">
+Kathmandu, Nepal
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Your Name
+</td>
+<td style="text-align:left;">
+Bhaktapur, Nepal
+</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+<div id="instruction" class="section level1" data-icon="">
+<h1>Instruction</h1>
+<p>Let’s help you submit your first <code>Pull Request</code>.</p>
+<p>Once your pull request is being merged, your profile will be visible in the Submissions section of this page. For this exercise you’ll be adding a new entry to the source code of this website with your profile details. Excited? Let’s begin!</p>
+<div id="row" class="section level2 tabset tabset-fade">
+<h2 class="tabset tabset-fade">Row</h2>
+<div id="step-1" class="section level3">
+<h3>Step 1</h3>
+<ul>
+<li><p>Go to this <a href="https://github.com/bjungbogati/flexdash_map">GitHub repository</a> and fork the project to your account.</p></li>
+<li><p>Click on the fork button on the top right corner of the repository page to do it.</p></li>
+<li><p>Once done, GitHub will take you to the forked copy in your account. Eg: <code>https://github.com/YOUR-USERNAME/flexdash_map</code></p></li>
+</ul>
+</div>
+<div id="step-2" class="section level3">
+<h3>Step 2</h3>
+<ul>
+<li><p>Clone the forked repository to your local machine. Click on the big green button saying “Clone or download” and copy the https url of your repository.</p></li>
+<li><p>Fire up the terminal (on linux systems ctrl+alt+t. on Windows open the Git-bash ) navigate to your desired directory and type the following command.</p></li>
+<li><p>Replace the link with the clone URL of your repository and hit Enter. git clone <a href="https://github.com/YOUR_USERNAME/tryGit.git" class="uri">https://github.com/YOUR_USERNAME/tryGit.git</a></p></li>
+</ul>
+</div>
+<div id="step-3" class="section level3">
+<h3>Step 3</h3>
+<ul>
+<li><p>Let’s start working on the changes required now! First <strong>cd</strong> into the cloned folder by typing the following command.</p></li>
+<li><p><code>cd flexdash_map</code></p></li>
+<li><p>Now, Before jumping in to the code, make sure you’re working on a different branch and not in master.</p></li>
+<li><p>To create a new branch, from the terminal inside your current project directory type the following command.</p></li>
+<li><p><code>git branch YOUR_BRANCH_NAME</code></p></li>
+<li><p>Replace the YOUR_USERNAME with your GitHub username or you can give any name to your branch which describes the purpose of the branch. Since here we’re adding your profile, we’ll simply give the name of the branch as above. eg: git branch binod-location.</p></li>
+<li><p>Once you have created the new branch we’ll change the current branch from main to your newly created branch. Execute the following command on your terminal.</p></li>
+<li><p><code>git checkout YOUR_BRANCH_NAME</code></p></li>
+</ul>
+</div>
+<div id="step-4" class="section level3">
+<h3>Step 4</h3>
+<ul>
+<li><p>In your file manager/terminal navigate to the downloaded repo.</p></li>
+<li><p>Open the sub-directory *<strong>data/location.csv</strong> and add your respective name and location</p>
+<p>name | home_city_country <br> Your Name | Bhaktapur, Nepal</p></li>
+<li><p>Note: Please, separate name and location by pipe <strong>|</strong>.</p></li>
+</ul>
+</div>
+<div id="step-5" class="section level3">
+<h3>Step 5</h3>
+<ul>
+<li><p>Commit the changes with a suitable commit message. First we need to stage all the changes we made. Open the terminal inside the project directory and execute following commands.</p></li>
+<li><p><code>git add .</code></p></li>
+<li><p>The above command stages all the changes, now lets commit it with a suitable message.</p></li>
+<li><p><code>git commit -m "YOUR_COMMIT_MESSAGE"</code></p></li>
+</ul>
+</div>
+<div id="step-6" class="section level3">
+<h3>Step 6</h3>
+<ul>
+<li><p>Let’s push the changes to your repository! execute the following command to push all the changes to the forked copy in your GitHub account.</p></li>
+<li><p><code>git push -u origin YOUR_BRANCH_NAME</code></p></li>
+</ul>
+</div>
+<div id="step-7" class="section level3">
+<h3>Step 7</h3>
+<ul>
+<li><p>Now, open your web browser and goto the original repository on GitHub. If your changes has been pushed to your forked copy, You’ll be able to see an option saying “New Pull Request” in the original repository.</p></li>
+<li><p>Click on the option, one next page choose the master branch of the main repo against your created-branch name ( choose your branch name we created and not master). the click on create pull request.</p></li>
+<li><p>Once you fill in the commit message and comment click on submit pull request. and you are all done! Wait for a reviewer to review your file and merge it to the master.</p></li>
+<li><p>Once its been successfully merged, your name and location map will be visible in the home tab.</p></li>
+</ul>
+</div>
 </div>
 </div>
 
