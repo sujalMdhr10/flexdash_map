@@ -82,7 +82,7 @@ Eg: `https://github.com/YOUR-USERNAME/flexdash_map`
 - Fire up the terminal (on linux systems ctrl+alt+t. on Windows open the Git-bash ) navigate to your desired directory and type the following command. 
 
 - Replace the link with the clone URL of your repository and hit Enter.
-git clone https://github.com/YOUR_USERNAME/tryGit.git
+git clone https://github.com/YOUR_USERNAME/flexdash_map.git
 
 
 ### Step 3
